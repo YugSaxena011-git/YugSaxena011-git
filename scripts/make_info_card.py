@@ -1,0 +1,28 @@
+# scripts/make_info_card.py
+svg_content = """<svg xmlns="http://www.w3.org/2000/svg" width="490" height="370" viewBox="0 0 490 370">
+    <style>
+        .text { font-family: 'Courier New', Courier, monospace; font-size: 14px; fill: #c9d1d9; opacity: 0; animation: fadeIn 0.4s forwards; }
+        .key { fill: #58a6ff; font-weight: bold; }
+        .prompt { fill: #3fb950; font-weight: bold; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateX(-10px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+    </style>
+    <!-- Background matching GitHub Dark Mode -->
+    <rect width="100%" height="100%" fill="#0d1117" rx="6"/>
+
+    <!-- Staggered animation text lines -->
+    <text x="20" y="40" class="text" style="animation-delay: 0.1s;"><tspan class="prompt">Yug Saxena</tspan>:~$ neofetch</text>
+    <text x="20" y="90" class="text" style="animation-delay: 0.3s;"><tspan class="key">Role</tspan>       B.Tech CSE Student @ Jain University</text>
+    <text x="20" y="125" class="text" style="animation-delay: 0.5s;"><tspan class="key">Languages</tspan>  Java, Python, C, SQL</text>
+    <text x="20" y="160" class="text" style="animation-delay: 0.7s;"><tspan class="key">Stack</tspan>      React.js, Spring Boot, MongoDB, Node.js</text>
+    <text x="20" y="195" class="text" style="animation-delay: 0.9s;"><tspan class="key">Focus</tspan>      Full-Stack Web Dev &amp; Data Structures</text>
+    <text x="20" y="230" class="text" style="animation-delay: 1.1s;"><tspan class="key">Projects</tspan>   Entangle (WebSockets), Automated Kiosk</text>
+    <text x="20" y="265" class="text" style="animation-delay: 1.3s;"><tspan class="key">Location</tspan>   Bengaluru, India</text>
+</svg>"""
+
+with open("info-card.svg", "w", encoding="utf-8") as f:
+    f.write(svg_content)
+
+print("Generated info-card.svg successfully!")
